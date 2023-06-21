@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "climaClient", url = "https://api.openweathermap.org/data/2.5")
 public interface ClimaFeignClient {
     @GetMapping("/weather")
-    ClimaDTO buscaClima(@RequestParam("lat") Long latitude,
-                        @RequestParam("lon") Long longitude,
+    ClimaDTO buscaClima(@RequestParam("lat") Double latitude,
+                        @RequestParam("lon") Double longitude,
                         @RequestParam("appid") String apiKey,
                         @RequestParam("units") String units);
 }

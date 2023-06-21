@@ -14,12 +14,12 @@ public class IndicadorFilmesController implements IndicadorFilmesAPI {
     private final IndicadorFilmesService indicadorFilmesService;
 
     @Override
-    public List<FilmeResponse> indicaFilmes(Long longitude, Long latitude) {
+    public List<FilmeResponse> indicaFilmes(Double latitude, Double longitude) {
         log.info( "[inicia] IndicadorFilmesController - indicaFilmes" );
-        log.info( "[longitude] {} - [latitude] {}", longitude, latitude );
+        log.info( "[longitude] {} - [latitude] {}", latitude, longitude);
         var localizacao = LocalizacaoDTO.builder()
-                .longitude(longitude)
                 .latitude(latitude)
+                .longitude(longitude)
                 .build();
         var filmes = indicadorFilmesService.buscaIndicacoesFilmes(localizacao);
         log.info( "[finaliza] IndicadorFilmesController - indicaFilmes" );

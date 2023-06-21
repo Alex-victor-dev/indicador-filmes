@@ -20,7 +20,7 @@ public class ClimaInfraClient implements ClimaClient {
     public ClimaDTO buscaClima(LocalizacaoDTO localizacao) {
         log.info( "[inicia] ClimaInfraClient - buscaClima" );
         log.info( "[localizacao] {}", localizacao );
-        ClimaDTO climaDTO = climaFeignClient.buscaClima( localizacao.getLatitude(), localizacao.getLongitude(), apiKey, units );
+        ClimaDTO climaDTO = climaFeignClient.buscaClima( localizacao.getLongitude(), localizacao.getLatitude(), apiKey, units );
         log.info( "[clima] {}", climaDTO);
         log.info( "[finaliza] ClimaInfraClient - buscaClima" );
         return climaDTO;

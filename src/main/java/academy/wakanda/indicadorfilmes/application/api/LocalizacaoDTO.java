@@ -9,6 +9,6 @@ import lombok.ToString;
 @ToString
 public class LocalizacaoDTO {
 
-    private Long longitude;
-    private Long latitude;
+    private Double latitude;
+    private Double longitude;
 }

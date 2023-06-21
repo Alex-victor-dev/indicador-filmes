@@ -11,5 +11,5 @@ public interface IndicadorFilmesAPI {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    List<FilmeResponse> indicaFilmes(@RequestParam Long longitude, @RequestParam Long latitude);
+    List<FilmeResponse> indicaFilmes(@RequestParam Double latitude, @RequestParam Double longitude);
 }
