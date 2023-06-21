@@ -11,12 +11,18 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class ClimaInfraClient implements ClimaClient {
+
+    private final ClimaFeignClient climaFeignClient;
+    private String apiKey = "46c4bcf40974ce57aca2acf485c77ef3";
+    private String units = "metric";
+
     @Override
     public ClimaDTO buscaClima(LocalizacaoDTO localizacao) {
-        log.info( "[inicia] ClimaInfraClient - buscaClima");
-        log.info( "[localizacao] {}", localizacao);
-        log.info( "[finaliza] ClimaInfraClient - buscaClima");
-
-        return null;
+        log.info( "[inicia] ClimaInfraClient - buscaClima" );
+        log.info( "[localizacao] {}", localizacao );
+        ClimaDTO climaDTO = climaFeignClient.buscaClima( localizacao.getLatitude(), localizacao.getLongitude(), apiKey, units );
+        log.info( "[clima] {}", climaDTO);
+        log.info( "[finaliza] ClimaInfraClient - buscaClima" );
+        return climaDTO;
     }
 }

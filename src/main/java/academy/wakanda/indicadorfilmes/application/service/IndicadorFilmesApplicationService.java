@@ -21,7 +21,7 @@ public class IndicadorFilmesApplicationService implements IndicadorFilmesService
     public List<FilmeResponse> buscaIndicacoesFilmes(LocalizacaoDTO localizacao) {
         log.info( "[inicia] IndicadorFilmesApplicationService - buscaIndicacoesFilmes" );
         log.info( "[localizacao] {}", localizacao );
-        ClimaDTO clima = climaClient.buscaClima( localizacao );
+        ClimaDTO clima = climaClient.buscaClima(localizacao);
         //FilmeCategoria categoria = filmeCategoriaRepository.buscaAtravesDaTemperatura(clima.getTemperatura());
         //List<FilmeResponse> filmes = filmeClient.buscaAtravesDaCategoria(categoria);
         log.info( "[finaliza] IndicadorFilmesApplicationService - buscaIndicacoesFilmes" );
