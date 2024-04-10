@@ -14,19 +14,22 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class ClimaInfraClient implements ClimaClient {
 
-    private final ClimaFeignClient climaFeignClient;
-    @Value("${academy.wakanda.key}")
-    private String apiKey;
-    @Value("${academy.wakanda.units}")
-    private String units;
+	private final ClimaFeignClient climaFeignClient;
 
-    @Override
-    public ClimaDTO buscaClima(LocalizacaoDTO localizacao) {
-        log.info( "[inicia] ClimaInfraClient - buscaClima" );
-        log.info( "[localizacao] {}", localizacao );
-        ClimaDTO climaDTO = climaFeignClient.buscaClima(localizacao.getLongitude(), localizacao.getLatitude(), apiKey, units );
-        log.info( "[clima] {}", climaDTO);
-        log.info( "[finaliza] ClimaInfraClient - buscaClima" );
-        return climaDTO;
-    }
+	@Value("${academy.wakanda.key}")
+	private String apiKey;
+
+	@Value("${academy.wakanda.units}")
+	private String units;
+
+	@Override
+	public ClimaDTO buscaClima(LocalizacaoDTO localizacao) {
+		log.info("[inicia] ClimaInfraClient - buscaClima");
+		log.info("[localizacao] {}", localizacao);
+		ClimaDTO climaDTO = climaFeignClient.buscaClima(localizacao.getLongitude(), localizacao.getLatitude(), apiKey,
+				units);
+		log.info("[clima] {}", climaDTO);
+		log.info("[finaliza] ClimaInfraClient - buscaClima");
+		return climaDTO;
+	}
 }
