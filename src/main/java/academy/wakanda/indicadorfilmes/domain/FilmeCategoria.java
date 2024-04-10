@@ -13,14 +13,16 @@ import javax.persistence.Id;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Getter
+@ToString
 @NoArgsConstructor(access = AccessLevel.PACKAGE)
 public class FilmeCategoria {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(columnDefinition = "uuid", name = "idFilme", updatable = false, unique = true, nullable = false)
 	private UUID id;
 	@Enumerated(EnumType.STRING)
