@@ -1,7 +1,37 @@
-academy:
-  wakanda:
-    key: ${CLIMA_KEY:46c4bcf40974ce57aca2acf485c77ef3}
+server:
+  servlet:
+    context-path: /indicadorfilmes
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+indicadorfilmes:
+  clima:
+    apikey: ${CLIMA_API_KEY:46c4bcf40974ce57aca2acf485c77ef3}
     units: ${CLIMA_UNITS:metric}
+    server: ${CLIMA_SERVER:https://api.openweathermap.org/data/2.5}
+  filme:
+    token: ${FILME_TOKEN:Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZjM3ZGUzMzQ2YjM0ZmEyZjU1OWIyNzUxYTU1MWU3ZiIsInN1YiI6IjY0OTIyYTlkODUwMDVkMDBlODc3Njc0MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.E2VBsqmW7FLpDlWxO7KBJtxUS_fBfGMUojSGNToqK4I}
+    server: https://api.themoviedb.org
     
 logging:
   level:

@@ -16,10 +16,10 @@ public class ClimaInfraClient implements ClimaClient {
 
 	private final ClimaFeignClient climaFeignClient;
 
-	@Value("${academy.wakanda.key}")
+	@Value("${indicadorfilmes.clima.apikey}")
 	private String apiKey;
 
-	@Value("${academy.wakanda.units}")
+	@Value("${indicadorfilmes.clima.units}")
 	private String units;
 
 	@Override
