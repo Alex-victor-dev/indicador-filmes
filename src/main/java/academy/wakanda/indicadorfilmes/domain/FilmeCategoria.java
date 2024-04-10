@@ -24,7 +24,7 @@ public class FilmeCategoria {
 	@Column(columnDefinition = "uuid", name = "idFilme", updatable = false, unique = true, nullable = false)
 	private UUID id;
 	@Enumerated(EnumType.STRING)
-	private FilmeCategoriaEnun categoria;
+	private FilmeCategoriaEnum categoria;
 	private Double temperaturaMinima;
 	private Double temperaturaMaxima;
 }
