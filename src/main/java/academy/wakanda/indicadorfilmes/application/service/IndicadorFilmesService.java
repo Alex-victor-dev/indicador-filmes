@@ -1,11 +1,11 @@
 package academy.wakanda.indicadorfilmes.application.service;
 
-import academy.wakanda.indicadorfilmes.application.api.FilmeResponse;
-import academy.wakanda.indicadorfilmes.application.api.LocalizacaoDTO;
-
 import java.util.List;
+
+import academy.wakanda.indicadorfilmes.application.api.FilmeResponseData;
+import academy.wakanda.indicadorfilmes.application.api.LocalizacaoDTO;
 
 public interface IndicadorFilmesService {
 
-    List<FilmeResponse> buscaIndicacoesFilmes(LocalizacaoDTO localizacao);
+	List<FilmeResponseData.FilmeResponse> buscaIndicacoesFilmes(LocalizacaoDTO localizacao);
 }

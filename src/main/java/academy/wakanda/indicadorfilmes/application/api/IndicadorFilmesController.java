@@ -14,7 +14,7 @@ public class IndicadorFilmesController implements IndicadorFilmesAPI {
     private final IndicadorFilmesService indicadorFilmesService;
 
     @Override
-    public List<FilmeResponse> indicaFilmes(Double latitude, Double longitude) {
+    public List<FilmeResponseData.FilmeResponse> indicaFilmes(Double latitude, Double longitude) {
         log.info( "[inicia] IndicadorFilmesController - indicaFilmes" );
         log.info( "[longitude] {} - [latitude] {}", latitude, longitude);
         var localizacao = LocalizacaoDTO.builder()
