@@ -13,4 +13,7 @@ public interface FilmeCategoriaInfraJpaRepository extends JpaRepository<FilmeCat
 	@Query("SELECT fc FROM FilmeCategoria fc WHERE fc.temperaturaMinima <= :temperaturaMaxima AND fc.temperaturaMaxima > :temperaturaMinima")
 	List<FilmeCategoria> buscarPorIntervaloDeTemperatura(Double temperaturaMinima, Double temperaturaMaxima);
 
+	@Query("SELECT COUNT(*) FROM FilmeCategoria")
+	Long contarRegistros();
+
 }

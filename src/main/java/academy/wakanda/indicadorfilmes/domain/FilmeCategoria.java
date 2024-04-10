@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PACKAGE)
 public class FilmeCategoria {
 
 	@Id
@@ -27,4 +27,10 @@ public class FilmeCategoria {
 	private FilmeCategoriaEnum categoria;
 	private Double temperaturaMinima;
 	private Double temperaturaMaxima;
+
+	public FilmeCategoria(FilmeCategoriaEnum categoria, Double temperaturaMinima, Double temperaturaMaxima) {
+		this.categoria = categoria;
+		this.temperaturaMinima = temperaturaMinima;
+		this.temperaturaMaxima = temperaturaMaxima;
+	}
 }
