@@ -1,1 +1,8 @@
-
+academy:
+  wakanda:
+    key: ${CLIMA_KEY:46c4bcf40974ce57aca2acf485c77ef3}
+    units: ${CLIMA_UNITS:metric}
+    
+logging:
+  level:
+    academy.wakanda.indicadorfilmes: ${LOG_LEVEL:DEBUG}
